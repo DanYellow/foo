@@ -22,7 +22,7 @@ jobs:
               run: git config user.email "test@example.com" && git config user.name "CI/CD - MMI"
 
             - name: Install dependencies
-              run: npm i
+              run: npm ci
 
             #- name: Lint
             #  run: npm run lint
