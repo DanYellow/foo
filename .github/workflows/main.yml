@@ -35,8 +35,10 @@ jobs:
 
             - run: cat package.json
 
-            - name: Run Playwright tests
-              run: npx playwright test --grep @smoke --project=chromium
+            - name: Run smoke tests
+              run: npx playwright test --project=chromium --grep @smoke
+            - name: Run non-smoke tests
+              run: npx playwright test --project=chromium --grep-invert @smoke
 
             - name: Date et heure du build
               run: echo "Le build a été lancé le ${{ env.Date }} à ${{ env.Time }} par ${{ env.Actor }}"
